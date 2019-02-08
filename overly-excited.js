@@ -40,3 +40,15 @@ const addExcitement = (theWordArray, addCharater, numTimes)  => {
 
 // Invoke the function and pass in the array
 addExcitement(sentence, "!", 3)
+
+
+//Steve's code --- using objects and string methods
+const eloquentSentence = ["Everybody", "wants", "to", "rule", "the", "world", "but", "not", "work", "for", "it"]
+
+const addExcitement = options => options.words.reduce((acc, word, idx) =>
+     acc + (((idx + 1) % 3 === 0)
+        ? ` ${word}${options.delimiter.repeat((idx + 1) / 3)}`
+        : ` ${word}`), "")
+
+const final = addExcitement({ "words": eloquentSentence, "delimiter": "🐹" })
+console.log(final)
